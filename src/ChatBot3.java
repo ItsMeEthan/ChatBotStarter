@@ -29,6 +29,7 @@ public class ChatBot3
 			System.out.println(getResponse(statement));
 		}
 	}
+
 	/**
 	 * Get a default greeting 	
 	 * @return a greeting
