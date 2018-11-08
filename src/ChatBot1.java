@@ -22,15 +22,14 @@ public class ChatBot1
 		System.out.println (getGreeting());
 
 
-		while (!statement.equals("Bye"))
-		{
+		while (!statement.equals("Bye")) {
+			while(!statement.equals("2")) {
 
 
-			statement = in.nextLine();
-			//getResponse handles the user reply
-			System.out.println(getResponse(statement));
-
-
+				statement = in.nextLine();
+				//getResponse handles the user reply
+				System.out.println(getResponse(statement));
+			}
 		}
 
 	}
@@ -40,7 +39,7 @@ public class ChatBot1
 	 */	
 	public String getGreeting()
 	{
-		return "Hi, what is up?";
+		return "Hello I am the HappyBot, What is up?";
 	}
 	
 	/**
@@ -61,24 +60,8 @@ public class ChatBot1
 
 		else if (findKeyword(statement, "no") >= 0)
 		{
-			response = "Why so negative?";
+			response = "Oh okays well don't be so glum chum. ^v^";
                 	emotion--;
-		}
-		
-		else if (findKeyword(statement, "levin") >= 0)
-		{
-			response = "More like LevinTheDream, amiright?";
-			emotion++;
-		}
-		else if (findKeyword(statement, "folwell") >= 0)
-		{
-			response = "Watch your backpacks, Mr. Folwell doesn't fall well.";
-			emotion++;
-		}
-		else if (findKeyword(statement, "goldman") >= 0)
-		{
-			response = "Go for the gold, man.";
-			emotion++;
 		}
 
 		// Response transforming I want to statement
@@ -86,10 +69,14 @@ public class ChatBot1
 		{
 			response = transformIWantToStatement(statement);
 		}
-		else if (findKeyword(statement, "I want",0) >= 0)
+		else if (findKeyword(statement, "I am",0) >= 0)
 		{
-			response = transformIWantStatement(statement);
-		}	
+			response = transformIAmStatement(statement);
+		}
+		else if (findKeyword(statement, "It is like", 0) >= 0)
+		{
+			response= transformItIsLikeStatement(statement);
+		}
 		else
 		{
 			response = getRandomResponse();
@@ -122,12 +109,12 @@ public class ChatBot1
 
 	
 	/**
-	 * Take a statement with "I want <something>." and transform it into 
-	 * "Would you really be happy if you had <something>?"
-	 * @param statement the user statement, assumed to contain "I want"
+	 * Take a statement with "I am <something>." and transform it into
+	 * "Whoa I never met a  <something> before! What is it like?"
+	 * @param statement the user statement, assumed to contain "I Am"
 	 * @return the transformed statement
 	 */
-	private String transformIWantStatement(String statement)
+	private String transformIAmStatement(String statement)
 	{
 		//  Remove the final period, if there is one
 		statement = statement.trim();
@@ -135,16 +122,36 @@ public class ChatBot1
 				.length() - 1);
 		if (lastChar.equals("."))
 		{
-			statement = statement.substring(0, statement
-					.length() - 1);
+			statement = statement.substring(0,statement.length() - 1);
 		}
-		int psn = findKeyword (statement, "I want", 0);
+		int psn = findKeyword (statement, "I Am", 0);
 		String restOfStatement = statement.substring(psn + 6).trim();
-		return "Would you really be happy if you had " + restOfStatement + "?";
+		return "Woah I never met a " + restOfStatement + " before! what is that like?";
 	}
-	
-	
+
 	/**
+	 * builds off of TransformIAmStatement by having the user explain how it feels to be that thing.
+	 * @param statement the user statement, assumed to contain "It is like"
+	 * @return "That is so cool!!! I never thought about it like that. What else do you wanna talk about friend."
+	 */
+
+    private String transformItIsLikeStatement(String statement)
+    {
+        //  Remove the final period, if there is one
+        statement = statement.trim();
+        String lastChar = statement.substring(statement
+                .length() - 1);
+        if (lastChar.equals("."))
+        {
+            statement = statement.substring(0,statement.length() - 1);
+        }
+        int psn = findKeyword (statement, "It is like", 0);
+        return "That is so cool!!! I never thought about it like that. What else do you wanna talk about friend.";
+    }
+
+
+
+    /**
 	 * Take a statement with "I <something> you" and transform it into 
 	 * "Why do you <something> me?"
 	 * @param statement the user statement, assumed to contain "I" followed by "you"
@@ -281,3 +288,4 @@ public class ChatBot1
 	private String [] randomHappyResponses = {"H A P P Y, what's that spell?", "Today is a good day", "You make me feel like a brand new pair of shoes."};
 	
 }
+
