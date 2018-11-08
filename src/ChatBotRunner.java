@@ -21,7 +21,7 @@ public class ChatBotRunner
 		Scanner in = new Scanner (System.in);
 		System.out.println("Welcome to the chatbot, nice to meet you.");
 		String statement = in.nextLine();
-		System.out.println("Which chatbot would you like to speak with? HappyBot 1? NotHappyBot 2? DontLookHereTopSecretSHHHHH 3?");
+		System.out.println("Which chatbot would you like to speak with? Chatbot 1? Chatbot 2? chatbot 3?");
 		statement = in.nextLine();
 		if (statement.equals("Chatbot 1"))
         {
