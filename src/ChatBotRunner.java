@@ -20,6 +20,7 @@ public class ChatBotRunner
 
 		Scanner in = new Scanner (System.in);
 		System.out.println("Welcome to the chatbot, nice to meet you.");
+		System.out.println("Here we got three types of bots, type 1, 2, or 3 to talk to one of them.");
 		String statement = in.nextLine();
 
 
@@ -29,11 +30,11 @@ public class ChatBotRunner
 			//This example has only chatbot1
 
 
+			//try saying "I am a {something}" to test chatbot 1, then to keep conversation say "It is like being {something}" to keep test its response.
 
-			chatbot1.chatLoop(statement);
+				chatbot1.chatLoop(statement);
 
-
-			statement = in.nextLine();
+				statement = in.nextLine();
 
 
 		}
