@@ -29,20 +29,6 @@ public class ChatBot3
 			System.out.println(getResponse(statement));
 		}
 	}
-	public void chatEnd1(String statement)
-    {
-        if (findKeyword(statement, "switch to chatbot 1") >= 0)
-        {
-
-        }
-    }
-	public void chatEnd2(String statement)
-    {
-        if (findKeyword(statement, "switch to chatbot 2") >= 0)
-        {
-
-        }
-    }
 	/**
 	 * Get a default greeting 	
 	 * @return a greeting
