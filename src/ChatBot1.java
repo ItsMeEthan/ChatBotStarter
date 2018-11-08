@@ -39,7 +39,7 @@ public class ChatBot1
 	 */	
 	public String getGreeting()
 	{
-		return "Hello I am the HappyBot, What is up?";
+		return "Hello I am the HappyBot, What are you?";
 	}
 	
 	/**
@@ -126,7 +126,7 @@ public class ChatBot1
 		}
 		int psn = findKeyword (statement, "I Am", 0);
 		String restOfStatement = statement.substring(psn + 6).trim();
-		return "Woah I never met a " + restOfStatement + " before! what is that like?";
+		return "Woah I never met a " + restOfStatement + " before! what is that like? (note: input should start {It is like}";
 	}
 
 	/**
@@ -288,4 +288,3 @@ public class ChatBot1
 	private String [] randomHappyResponses = {"H A P P Y, what's that spell?", "Today is a good day", "You make me feel like a brand new pair of shoes."};
 	
 }
-
