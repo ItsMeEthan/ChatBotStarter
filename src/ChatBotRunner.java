@@ -20,24 +20,33 @@ public class ChatBotRunner
 
 		Scanner in = new Scanner (System.in);
 		System.out.println("Welcome to the chatbot, nice to meet you.");
-		System.out.println("Here we got three types of bots, type 1, 2, or 3 to talk to one of them.");
 		String statement = in.nextLine();
-
-
-		while (!statement.equals("Bye"))
-		{
-			//Use Logic to control which chatbot is handling the conversation\
-			//This example has only chatbot1
-
-
-			//try saying "I am a {something}" to test chatbot 1, then to keep conversation say "It is like being {something}" to keep test its response.
-
-				chatbot1.chatLoop(statement);
-
-				statement = in.nextLine();
-
-
-		}
+		System.out.println("Which chatbot would you like to speak with? Chatbot 1? Chatbot 2? Chatbot 3?");
+		statement = in.nextLine();
+		if (statement.equals("Chatbot 1"))
+        {
+            while(!statement.equals("Bye"))
+            {
+                chatbot1.chatLoop(statement);
+                statement = in.nextLine();
+            }
+        }
+        if (statement.equals("Chatbot 2"))
+        {
+            while(!statement.equals("Bye"))
+            {
+                chatbot2.chatLoop(statement);
+                statement = in.nextLine();
+            }
+        }
+        if (statement.equals("Chatbot 3"))
+        {
+            while(!statement.equals("Bye"))
+            {
+                chatbot3.chatLoop(statement);
+                statement = in.nextLine();
+            }
+        }
 	}
 
 }
