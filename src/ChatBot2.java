@@ -270,7 +270,7 @@ public class ChatBot2
 			"Could you say that again?"
 	};
 	private String [] randomAngryResponses = {"Bahumbug.", "Harumph", "The rage consumes me!"};
-	private String [] randomPessimisticResponses = {"It's okay, it's only going to get worse.", "Today is an awful day!", "I hate everyone."};
+	private String [] randomPessimisticResponses = {"It's okay, it's only going to get worse.", "Today is an awful day!", "Why are you like this?", "I hate everyone."};
 
 
 }
