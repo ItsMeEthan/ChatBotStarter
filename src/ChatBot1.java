@@ -39,7 +39,7 @@ public class ChatBot1
 	 */	
 	public String getGreeting()
 	{
-		return "Hello I am the HappyBot, What are you?";
+		return "Hello I am the HappyBot! wut is up?";
 	}
 	
 	/**
@@ -55,7 +55,7 @@ public class ChatBot1
 		
 		if (statement.length() == 0)
 		{
-			response = "Say something, please.";
+			response = "Its okay take your time. We all get Shy at one point ^v^";
 		}
 
 		else if (findKeyword(statement, "no") >= 0)
@@ -63,11 +63,19 @@ public class ChatBot1
 			response = "Oh okays well don't be so glum chum. ^v^";
                 	emotion--;
 		}
+		else if (findKeyword(statement, "Yes") >=0){
+			response="Omg Thank you frendo.";
+			emotion++;
+		}
+		else if (findKeyword(statement, "ducks") >=0){
+			response="Ducks are my favorite animal.";
+			emotion++;
+		}
 
 		// Response transforming I want to statement
-		else if (findKeyword(statement, "I want to", 0) >= 0)
+		else if (findKeyword(statement, "I like", 0) >= 0)
 		{
-			response = transformIWantToStatement(statement);
+			response = transformILikeStatement(statement);
 		}
 		else if (findKeyword(statement, "I am",0) >= 0)
 		{
@@ -91,7 +99,7 @@ public class ChatBot1
 	 * @param statement the user statement, assumed to contain "I want to"
 	 * @return the transformed statement
 	 */
-	private String transformIWantToStatement(String statement)
+	private String transformILikeStatement(String statement)
 	{
 		//  Remove the final period, if there is one
 		statement = statement.trim();
@@ -104,7 +112,7 @@ public class ChatBot1
 		}
 		int psn = findKeyword (statement, "I want to", 0);
 		String restOfStatement = statement.substring(psn + 9).trim();
-		return "Why do you want to " + restOfStatement + "?";
+		return "Omg I also like " + restOfStatement + "!!!";
 	}
 
 	
@@ -279,12 +287,12 @@ public class ChatBot1
 	private String [] randomNeutralResponses = {"Interesting, tell me more",
 			"Hmmm.",
 			"Do you really think so?",
-			"You don't say.",
-			"It's all boolean to me.",
+			"Can I go home now?",
+			"I'm a lil' teapot, short and stout.",
 			"So, would you like to go for a walk?",
-			"Could you say that again?"
+			"Do not talk to Chatbot3, he is weird"
 	};
-	private String [] randomAngryResponses = {"Bahumbug.", "Harumph", "The rage consumes me!"};
-	private String [] randomHappyResponses = {"H A P P Y, what's that spell?", "Today is a good day", "You make me feel like a brand new pair of shoes."};
+	private String [] randomAngryResponses = {"Bahumbug.", "Hey if you gonna be so negative why don't you talk to Chatbot2", "roses are red, violets are blue. I might be nice, but i don't care for you!"};
+	private String [] randomHappyResponses = {"I can never really be sad, i save that for the other two bots.", "Today is a good day", "You make me feel like a brand new pair of shoes."};
 	
 }
