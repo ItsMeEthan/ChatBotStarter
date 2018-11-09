@@ -4,7 +4,7 @@ import java.util.Scanner;
 /**
  * A program to carry on conversations with a human user.
  * This version:
- * @author Brooklyn Tech CS Department
+ * @YanHuang Brooklyn Tech CS Department
  * @version September 2018
  */
 public class ChatBot2
@@ -270,7 +270,7 @@ public class ChatBot2
 			"Could you say that again?"
 	};
 	private String [] randomAngryResponses = {"Bahumbug.", "Harumph", "The rage consumes me!"};
-	private String [] randomPessimisticResponses = {"It's okay, it's only going to get worse.", "Today is an awful day!", "I hste everyone."};
+	private String [] randomPessimisticResponses = {"It's okay, it's only going to get worse.", "Today is an awful day!", "I hate everyone."};
 
 
 }
