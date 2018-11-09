@@ -21,32 +21,31 @@ public class ChatBotRunner
 		Scanner in = new Scanner (System.in);
 		System.out.println("Welcome to the chatbot, nice to meet you.");
 		String statement = in.nextLine();
-		System.out.println("Which chatbot would you like to speak with? Chatbot 1? Chatbot 2? chatbot 3?");
+		System.out.println("Which chatbot would you like to speak with? Chatbot 1? Chatbot 2? Chatbot 3?");
 		statement = in.nextLine();
-		if (statement.equals("Chatbot 1"))
+		while (!statement.equals("Bye"))
         {
-            while(!statement.equals("Bye"))
-            {
-                chatbot1.chatLoop(statement);
-                statement = in.nextLine();
+            if (statement.equals("Chatbot 1")) {
+
+                    chatbot1.chatLoop(statement);
+                    statement = in.nextLine();
+                    System.out.println(chatbot1.getResponse(statement));
+            }
+            if (statement.equals("Chatbot 2")) {
+
+                    chatbot2.chatLoop(statement);
+                    statement = in.nextLine();
+                    System.out.println(chatbot2.getResponse(statement));
+
+            }
+            if (statement.equals("Chatbot 3")) {
+
+                    chatbot3.chatLoop(statement);
+                    statement = in.nextLine();
+                    System.out.println(chatbot3.getResponse(statement));
+
             }
         }
-        if (statement.equals("Chatbot 2"))
-        {
-            while(!statement.equals("Bye"))
-            {
-                chatbot2.chatLoop(statement);
-                statement = in.nextLine();
-            }
         }
-        if (statement.equals("Chatbot 3"))
-        {
-            while(!statement.equals("Bye"))
-            {
-                chatbot3.chatLoop(statement);
-                statement = in.nextLine();
-            }
-        }
-	}
 
 }
