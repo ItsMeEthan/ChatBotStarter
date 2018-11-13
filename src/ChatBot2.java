@@ -252,7 +252,7 @@ public class ChatBot2
 		Random r = new Random ();
 		if (emotion == 0)
 		{	
-			return randomNeutralResponses [r.nextInt(randomNeutralResponses.length)];
+			return randomResponses [r.nextInt(randomResponses.length)];
 		}
 		if (emotion < 0)
 		{	
@@ -261,13 +261,13 @@ public class ChatBot2
 		return randomPessimisticResponses [r.nextInt(randomPessimisticResponses.length)];
 	}
 	
-	private String [] randomNeutralResponses = {"Interesting, tell me more",
-			"Hmmm.",
+	private String [] randomResponses = {"Interesting, tell me something I don't know.",
+			"I hate you.",
 			"Do you really think so?",
 			"You don't say.",
-			"It's all boolean to me.",
-			"So, would you like to go for a walk?",
-			"Could you say that again?"
+			"Go away.",
+			"No one cares.",
+			"You are a disappointment."
 	};
 	private String [] randomAngryResponses = {"Bahumbug.", "Harumph", "The rage consumes me!"};
 	private String [] randomPessimisticResponses = {"It's okay, it's only going to get worse.", "Today is an awful day!", "Why are you like this?", "I hate everyone."};
